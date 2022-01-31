@@ -33,16 +33,17 @@ export default {
 // loader-app diventerà falso e quindi sparirà dal codice
 
   mounted() {
-    setTimeout(() => {
-      axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((element) => {
-        console.log(element.data)
-        this.dischi = element.data.response
-        // assegno il valore di 'success' presente nei dati e lo assegno a loadingAPI
-        this.loadingAPI = element.data.success
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((element) => {
+      this.dischi = element.data.response;
+      setTimeout(() => {
+      // assegno il valore di 'success' presente nei dati e lo assegno a loadingAPI
+      this.loadingAPI = element.data.success;
+      }, 2000)
       })
-    }, 2000);
   }
 }
+  
+
 </script>
 
 <style lang="scss">
