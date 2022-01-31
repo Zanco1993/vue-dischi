@@ -15,7 +15,6 @@ export default {
         height: 70px;
         border: 1px solid black;
         background-color: #2E3A46;
-        margin-bottom: 100px;
         padding: 10px 15px;
 
         img {

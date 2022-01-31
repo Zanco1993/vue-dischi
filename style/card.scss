@@ -4,6 +4,12 @@
     padding: 20px;
     text-align: center;
     background-color: #2E3A46;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: #1f2830;
+    }
 
     img {
         width:100%;

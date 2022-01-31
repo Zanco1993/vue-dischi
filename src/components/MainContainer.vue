@@ -25,7 +25,7 @@ export default {
     .container-cards {
         margin-top: 100px;
         width: 1200px;
-        margin: 0 auto;
+        margin: 100px auto;
         display: flex;
         flex-wrap: wrap;
 }
