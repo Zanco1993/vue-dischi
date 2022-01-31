@@ -1,0 +1,21 @@
+.box-card {
+    width: calc(100% / 5 - 30px);
+    margin: 10px 15px;
+    padding: 10px;
+    text-align: center;
+    background-color: #2E3A46;
+
+    img {
+        width:100%;
+    }
+
+    h2 {
+        color: white;
+        padding: 20px 0;
+    }
+
+    p {
+        color: #6A6663;
+    }
+
+}
