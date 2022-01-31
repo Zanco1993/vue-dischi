@@ -4,7 +4,6 @@
         v-for="(card, index) in dischi"
         :key="index"
         :innerCard="card" />
-        <list-cards />
     </div>
 </template>
 
@@ -26,7 +25,6 @@ export default {
     .container-cards {
         margin-top: 100px;
         width: 1200px;
-        border: 1px solid black;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;

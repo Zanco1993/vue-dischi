@@ -1,7 +1,7 @@
 <template>
     <div class="box-card">
         <img :src="innerCard.poster" alt="">
-        <h2>{{ innerCard.title.toUpperCase() }}</h2>
+        <h3>{{ innerCard.title.toUpperCase() }}</h3>
         <p>{{ innerCard.author }}</p>
         <p>{{ innerCard.year }}</p>
     </div>
