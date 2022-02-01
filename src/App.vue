@@ -2,9 +2,9 @@
   <div id="app">
     <header-app/>
     <!-- <search-app v-if="loadingAPI === true" @search="selectGenre"/> -->
-    <search-app v-if="loadingAPI === true" />
+    <search-app v-if="loadingAPI === true" @search="selectGenre"/>
     <!-- eseguo l'applicazione solo quando loadingAPI sarà true -->
-    <main-container v-if="loadingAPI" :dischi="dischi" />
+    <main-container v-if="loadingAPI" :dischi="dischiGenre" />
     <loader-app v-else/>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
   mounted() {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((element) => {
       this.dischi = element.data.response;
-      // this.dischiGenre = element.data.response
+      this.dischiGenre = element.data.response
       
       setTimeout(() => {
       // assegno il valore di 'success' presente nei dati e lo assegno a loadingAPI
@@ -48,13 +48,14 @@ export default {
       })
   },
 
-  // mothods: {
-  //   selectGenre(select) {
-  //     this.dischiGenre = this.dischi.filter((genere) => {
-  //       return genere.response.genre.includes(select)
-  //     })
-  //   }
-  // }
+  mothods: {
+    selectGenre(select) {
+      console.log('prova')
+      this.dischiGenre = this.dischi.filter((genere) => {
+        return genere.genre.includes(select)
+      })
+    }
+  }
 }
   
 
