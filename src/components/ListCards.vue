@@ -4,6 +4,7 @@
         <h3>{{ innerCard.title.toUpperCase() }}</h3>
         <p>{{ innerCard.author }}</p>
         <p>{{ innerCard.year }}</p>
+        <p>{{ innerCard.genre }}</p>
     </div>
 </template>
 
