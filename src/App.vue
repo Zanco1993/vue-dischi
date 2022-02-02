@@ -5,6 +5,7 @@
       v-if="loadingAPI === true"
       @searchGenre="selectGenre"
       @searchArtist="selectArtist"
+      @reset="reset"
       :dischi="dischi"
     />
     <!-- eseguo l'applicazione solo quando loadingAPI sarà true -->
@@ -77,6 +78,10 @@ export default {
       }
 
     },
+
+    reset() {
+      this.dischiFilter = this.dischi
+    }
   },
 };
 </script>

@@ -23,7 +23,12 @@
         {{ autore.author }}
         </option>
       </select>
+
     </div>
+    <div class="content-reset">
+      <button @click="$emit('reset')" class="reset">Reset</button>
+    </div>
+
 
 
   </div>
@@ -44,17 +49,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content-input {
-  text-align: center;
-  padding: 20px;
+  .content-input {
+    text-align: center;
+    padding: 20px;
 
-  span {
-    color: white;
-    font-size: 20px;
+    span {
+      color: white;
+      font-size: 20px;
+    }
+    div {
+      color: white;
+      font-size: 20px;
+    }
   }
-  div {
-    color: white;
-    font-size: 20px;
+
+  .content-reset {
+    text-align: center;
+    
+    .reset {
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin-left: 50px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: red;
+      }
+    }
   }
-}
 </style>
