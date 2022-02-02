@@ -5,10 +5,7 @@
       <select @change="$emit('searchGenre', input)" v-model="input">
         <option disabled value="">Seleziona Genere</option>
         <option value="All">All</option>
-        <option value="Rock">Rock</option>
-        <option value="Pop">Pop</option>
-        <option value="Jazz">Jazz</option>
-        <option value="Metal">Metal</option>
+        <option v-for="(genere, index) in listGenre" :key="index" :value="genere">{{ genere }}</option>
       </select>
     </div>
     <div class="content-input">
@@ -16,11 +13,11 @@
       <select @change="$emit('searchArtist', input)" v-model="input">
         <option disabled value="">Seleziona Artista</option>
         <option value="All">All</option>
-        <option v-for="(autore, index) in dischi" 
+        <option v-for="(autore, index) in listAuthor" 
         :key="index" 
-        :value="autore.author"
+        :value="autore"
         >
-        {{ autore.author }}
+        {{ autore }}
         </option>
       </select>
 
@@ -43,7 +40,8 @@ export default {
     };
   },
   props: {
-    dischi: Array
+    listGenre: Array,
+    listAuthor: Array
   }
 };
 </script>

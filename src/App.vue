@@ -6,7 +6,8 @@
       @searchGenre="selectGenre"
       @searchArtist="selectArtist"
       @reset="reset"
-      :dischi="dischi"
+      :listGenre="listGenre"
+      :listAuthor="listAuthor"
     />
     <!-- eseguo l'applicazione solo quando loadingAPI sarà true -->
     <main-container v-if="loadingAPI" :dischi="dischiFilter" />
@@ -54,12 +55,34 @@ export default {
         }, 1000);
       });
   },
+  computed: {
+    listGenre() {
+      let list = [];
+      this.dischi.forEach((element) => {
+        if(!list.includes(element.genre.toLowerCase())) {
+          list.push(element.genre.toLowerCase())
+        }
+      })
+      return list;
+    },
+    listAuthor() {
+      let author = [];
+      this.dischi.forEach((element) => {
+        if(!author.includes(element.author.toLowerCase())) {
+          author.push(element.author.toLowerCase())
+        }
+      })
+      return author;
+    },
+
+  },
   methods: {
+
     selectGenre(input) {
       // console.log("prova");
       // popolo l'array di dischiFilter con il genere musicale
       this.dischiFilter = this.dischi.filter((genere) => {
-        return genere.genre.includes(input);
+        return genere.genre.toLowerCase().includes(input.toLowerCase());
       });
       // se clicco All, l'array torno come quello originale 
       if (input === "All") {
@@ -71,7 +94,7 @@ export default {
       // console.log("prova");
       // popolo l'array di dischiFilter con l'autore
       this.dischiFilter = this.dischi.filter((artista) => {
-        return artista.author.includes(input);
+        return artista.author.toLowerCase().includes(input.toLowerCase());
       });
       if (input === "All") {
         this.dischiFilter = this.dischi;
