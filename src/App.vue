@@ -58,13 +58,13 @@ export default {
 
   methods: {
     listGenre() {
-      let list = [];
+      let genre = [];
       this.dischi.forEach((element) => {
-        if (!list.includes(element.genre.toLowerCase())) {
-          list.push(element.genre.toLowerCase());
+        if (!genre.includes(element.genre.toLowerCase())) {
+          genre.push(element.genre.toLowerCase());
         }
       });
-      return list;
+      return genre;
     },
     listAuthor() {
       let author = [];
