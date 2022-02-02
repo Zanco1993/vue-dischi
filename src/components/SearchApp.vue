@@ -12,7 +12,7 @@
       </select>
     </div>
     <div class="content-input">
-      <span>Seleziona Album: </span>
+      <span>Seleziona Artista: </span>
       <select @change="$emit('searchArtist', input)" v-model="input">
         <option disabled value="">Seleziona Artista</option>
         <option value="All">All</option>
