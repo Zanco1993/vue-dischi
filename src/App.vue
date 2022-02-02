@@ -5,6 +5,7 @@
       v-if="loadingAPI === true"
       @searchGenre="selectGenre"
       @searchArtist="selectArtist"
+      :dischi="dischi"
     />
     <!-- eseguo l'applicazione solo quando loadingAPI sarà true -->
     <main-container v-if="loadingAPI" :dischi="dischiFilter" />
@@ -67,7 +68,7 @@ export default {
     },
     selectArtist(input) {
       // console.log("prova");
-      // popolo l'array di dischiFilter con il l'autore
+      // popolo l'array di dischiFilter con l'autore
       this.dischiFilter = this.dischi.filter((artista) => {
         return artista.author.includes(input);
       });
